@@ -1,1 +1,62 @@
-github page
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Tennis TDD</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css"></link>
+
+        <script src="http://code.jquery.com/jquery-1.10.2.min.js"></script>
+        <style>
+            body {
+                padding: 1em;
+            }
+        </style>
+        <script type="text/javascript">
+            //Use http://asaph.org/gravatar/ to generate gravatar image url
+            var spCheckCurrent = "mebusw";
+            var spCheckPlayers = [
+                {name: "mebusw", imgUrl:"http://www.gravatar.com/avatar/e2ecc51e27d5fd3843cc629c763c3ef8.jpg?s=64"},
+                {name: "gejo", imgUrl:"https://identicons.github.com/8b865520fd8fc69690ed08c5a15c8f9e.png"},
+                {name: "JosephYao", imgUrl:"http://www.gravatar.com/avatar/e2c78faae9bc14272d953d02df562e9e.jpg?s=64"},
+
+            ];
+
+            $(document).ready(function() {
+                TennisTable(spCheckPlayers, spCheckCurrent).render("#spCheckTurns");
+                TennisTable(pokerPlayers, pokerCurrent).render("#pokerTurns");
+            });
+        </script>
+    </head>
+    <body>
+        <h2>Tennis TDD Java</h2>
+        <h3>Rules</h3>
+        <ol>
+            <li>This is a tennis TDD. A player have to solve the failing test(s) without breaking the previous tests, then write another failing test for the next player.</li>
+            <li>Player's turn is circulated as in the player list in next section.</li>
+            <li>Code is the primary langauge. if that fails, uses English.</li>
+            <li>Anyone interested, please join by creating <a href="https://github.com/varokas/tennis-tdd-java/issues">an issue in github. I will add you to committers</a></li>
+        </ol>
+        <h3>How to play and take turns</h3>
+        <ul>
+            <li>Red -> Green -> Refactor</li>
+            <li>Edit this index.html page, line 16 to point to next player.</li>
+            <li>Checks-in/merge code. (pull requests are fine, but please merge them in by yourself. it's faster that way so that you don't have to wait for me to merge.)</li>
+            <li>check that red circle should be on next player</li>
+            <li>check that only your intended tests are failing</li>
+            <li>Notify next player in the disccusion thread in wechat (see qr at end of page)</li>
+        </ul>
+        <div style="float:left; width: 450px;;">
+            <h3>Reload Countdown</h3>
+            <ul>
+                <li><a href="https://github.com/varokas/tennis-tdd-java/tree/master">Source &amp; Specification</a></li>
+            </ul>
+            <svg id="spCheckTurns"></svg>
+        </div>
+        <div style="clear: left"></div>
+        <img src="https://f.cloud.github.com/assets/1692735/2134146/7176d38a-92d8-11e3-9d0c-6f84fb61f390.png">
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.0.3/js/bootstrap.min.js"></script>
+        <script src="http://d3js.org/d3.v3.min.js" charset="utf-8"></script>
+        <script src="js/tennis.js"></script>
+    </body>
+</html>
