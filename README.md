@@ -1,5 +1,7 @@
 **Reload Countdown**
 
+Status: http://varokas.github.io/tennis-tdd-java/
+
 Here is the problem description:
 
 In many games, the logic of firing your gun is as follows:
