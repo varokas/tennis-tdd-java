@@ -1,3 +1,7 @@
 .idea
 ReloadCountdown.iml
 out
+.project
+.classpath
+.settings
+bin

@@ -17,4 +17,12 @@ public class TestCountdown {
         countdown.startCounting(1);
         assertFalse(countdown.isStopped());
     }
+
+    @Test
+    public void countdown_decreased_to_zero_should_be_stopped() {
+        Countdown countdown = new Countdown();
+        countdown.startCounting(1);
+        countdown.decrease();
+        assertTrue(countdown.isStopped());
+    }
 }
