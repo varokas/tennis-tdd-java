@@ -11,8 +11,8 @@ public class Countdown {
 		this.seconds = seconds;
 	}
 
-	public void decrease() {
-		// TODO Auto-generated method stub
+	public void decrease(int seconds) {
+		this.seconds -= seconds;
 
 	}
 }
