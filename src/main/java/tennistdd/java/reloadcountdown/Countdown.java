@@ -17,4 +17,12 @@ public class Countdown {
 		this.seconds -= seconds;
 
 	}
+
+    void waitForSeconds(int seconds) {
+        try {
+            Thread.sleep(seconds);
+        } catch (InterruptedException e) {
+            throw new RuntimeException(e);
+        }
+    }
 }
