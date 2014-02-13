@@ -1,7 +1,7 @@
 package tennistdd.reloadcountdown;
 
 public class Countdown {
-	private int seconds;
+	private int seconds = 0;
 
 	public boolean isStopped() {
 		if (seconds > 0)
