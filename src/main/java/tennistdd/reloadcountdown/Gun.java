@@ -1,6 +1,6 @@
 package tennistdd.reloadcountdown;
 
-public class Countdown {
+public class Gun {
 	private int seconds = 0;
 
 	public boolean isStopped() {
