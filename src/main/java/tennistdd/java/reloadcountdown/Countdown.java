@@ -21,6 +21,7 @@ public class Countdown {
     void waitForSeconds(int seconds) {
         try {
             Thread.sleep(seconds);
+            decrease(seconds);
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
