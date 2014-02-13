@@ -16,28 +16,23 @@ public class GunTest {
     }
 
     @Test
-    public void an_initialized_countdown_should_be_stopped() {
-        assertTrue(gun.isStopped());
+    public void an_initialized_gun_should_be_loaded() {
+        assertTrue(gun.isLoaded());
     }
     
     @Test
-    public void a_started_countdown_should_not_be_stopped() {
-        gun.startCounting(1);
-        assertFalse(gun.isStopped());
+    public void a_just_fired_gun_should_not_be_loaded() {
+        gun.fire();
+        gun.setFiringInterval(1);
+        assertFalse(gun.isLoaded());
     }
 
     @Test
-    public void countdown_decreased_to_zero_should_be_stopped() {
-        gun.startCounting(1);
-        gun.decrease(1);
-        assertTrue(gun.isStopped());
-    }
-
-    @Test
-    public void countdown_starting_count_from_one_should_be_stopped_after_one_second() {
-        gun.startCounting(1);
-        gun.waitForSeconds(1);
-        assertTrue(gun.isStopped());
+    public void after_a_firing_interval_a_fired_gun_should_be_loaded() {
+        gun.fire();
+        gun.setFiringInterval(1);
+        gun.waitForReloading(1);
+        assertTrue(gun.isLoaded());
     }
 
 }
