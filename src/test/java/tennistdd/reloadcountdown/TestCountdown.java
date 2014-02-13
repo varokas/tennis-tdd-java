@@ -34,7 +34,7 @@ public class TestCountdown {
     }
 
     @Test
-    public void countdown_should_be_stopped_after_one_second() {
+    public void countdown_starting_count_from_one_should_be_stopped_after_one_second() {
         countdown.startCounting(1);
         countdown.waitForSeconds(1);
         assertTrue(countdown.isStopped());
