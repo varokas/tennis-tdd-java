@@ -1,4 +1,4 @@
-package tennistdd.java.reloadcountdown;
+package tennistdd.reloadcountdown;
 
 import org.junit.Before;
 import org.junit.Test;

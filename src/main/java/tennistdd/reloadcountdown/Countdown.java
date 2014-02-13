@@ -1,4 +1,4 @@
-package tennistdd.java.reloadcountdown;
+package tennistdd.reloadcountdown;
 
 public class Countdown {
 	private int seconds;
