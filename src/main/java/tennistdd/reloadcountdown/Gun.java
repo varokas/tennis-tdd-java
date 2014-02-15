@@ -30,4 +30,12 @@ public class Gun {
     public void fire() {
         this.firingInterval = 0;
     }
+
+    public void pullTrigger() {
+
+    }
+
+    public String makeClickingSound() {
+        return null;
+    }
 }
