@@ -2,22 +2,19 @@ package tennistdd.reloadcountdown;
 
 import org.junit.Test;
 
-import static org.junit.Assert.assertFalse;
-import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.mock;
+import static org.mockito.Mockito.verify;
 
 public class GunTest {
 
-    Gun gun = new Gun();
-
     @Test
     public void gun_can_fire_after_init() {
-        assertTrue(gun.canFire());
-    }
+        Target target = mock(Target.class);
+        Gun gun = new Gun(target);
 
-    @Test
-    public void gun_cannot_fire_right_after_fire() {
         gun.fire();
 
-        assertFalse(gun.canFire());
+        verify(target).isHit();
     }
+
 }

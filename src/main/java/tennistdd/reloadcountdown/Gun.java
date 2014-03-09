@@ -1,13 +1,13 @@
 package tennistdd.reloadcountdown;
 
 public class Gun {
-    private boolean firable = true;
+    private final Target target;
 
-    public boolean canFire() {
-        return firable;
+    public Gun(Target target) {
+        this.target = target;
     }
 
     public void fire() {
-        firable = false;
+        this.target.isHit();
     }
 }
