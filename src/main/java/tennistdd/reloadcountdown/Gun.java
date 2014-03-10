@@ -3,7 +3,7 @@ package tennistdd.reloadcountdown;
 public class Gun {
     private final Target target;
     private final ReloadingAnimation animation;
-    private boolean alreadyFired;
+    private final Countdown countdown = new Countdown();
 
     public Gun(Target target, ReloadingAnimation animation) {
         this.target = target;
@@ -11,10 +11,11 @@ public class Gun {
     }
 
     public void fire() {
-        if (alreadyFired) return;
+        if (!countdown.stopped())
+            return;
 
+        countdown.start(5);
         this.target.isHit();
-        alreadyFired = true;
-        this.animation.play(new Countdown());
+        this.animation.play(countdown);
     }
 }

@@ -1,6 +1,7 @@
 package tennistdd.reloadcountdown;
 
 import org.junit.Test;
+import org.mockito.ArgumentCaptor;
 
 import static org.mockito.Mockito.*;
 
@@ -30,5 +31,21 @@ public class GunTest {
         gun.fire();
 
         verify(animation).play(any(Countdown.class));
+    }
+
+    @Test
+    public void gun_can_fire_again_after_reloading() {
+        gun.fire();
+        decreaseCountdownAfterAnimationPlayed();
+
+        gun.fire();
+
+        verify(target, times(2)).isHit();
+    }
+
+    private void decreaseCountdownAfterAnimationPlayed() {
+        ArgumentCaptor<Countdown> countdown = ArgumentCaptor.forClass(Countdown.class);
+        verify(animation).play(countdown.capture());
+        countdown.getValue().decrease(5);
     }
 }
