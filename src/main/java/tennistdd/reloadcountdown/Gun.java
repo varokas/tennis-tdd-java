@@ -10,6 +10,11 @@ public class Gun {
         this.animation = animation;
     }
 
+    public Gun(int secondsForReloading) {
+        this.target = new Target();
+        this.animation = new ReloadingAnimation();
+    }
+
     public void fire() {
         if (!countdown.stopped())
             return;
